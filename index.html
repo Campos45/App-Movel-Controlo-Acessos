@@ -142,8 +142,8 @@
         <p>Para o correto funcionamento da Aplicação, recolhemos e processamos apenas as informações estritamente necessárias para a sua autenticação e para a execução dos comandos de controlo de acessos:</p>
         <ul>
             <li><strong>Informação de Autenticação:</strong> E-mail institucional e palavra-passe (para login local).</li>
-            <li><strong>Informação de Utilizador:</strong> Nome do utilizador e Identificador Único de Utilizador (<code>userId</code>) fornecidos pela API da instituição após o login.</li>
-            <li><strong>Registos de Acesso (Logs):</strong> Ao solicitar a abertura remota de uma porta, a aplicação envia para a API o seu <code>userId</code> e o identificador do laboratório (<code>labId</code>). Esta associação é guardada nos servidores da instituição por motivos de segurança e auditoria de acessos.</li>
+            <li><strong>Informação de Utilizador:</strong> Nome do utilizador e Identificador Único de Utilizador fornecidos pela API da instituição após o login.</li>
+            <li><strong>Registos de Acesso (Logs):</strong> Ao solicitar a abertura remota de uma porta, a aplicação envia para a API o seu id de utilizador e o identificador do laboratório. Esta associação é guardada nos servidores da instituição por motivos de segurança e auditoria de acessos.</li>
             <li><strong>Segurança Local:</strong> Se optar por definir um PIN de acesso rápido na aplicação, este será encriptado e guardado de forma segura no seu dispositivo físico utilizando a biblioteca nativa <code>androidx.security:security-crypto</code>. A aplicação não envia o seu PIN para os nossos servidores.</li>
         </ul>
     </section>
