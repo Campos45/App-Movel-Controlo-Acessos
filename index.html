@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Controlo de Acessos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --bg-body: #f7fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #4a5568;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a202c;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            font-family: monospace;
+            background-color: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #e53e3e;
+        }
+
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Política de Privacidade</h1>
+        <p class="last-updated">Última atualização: 16/06/2026</p>
+    </header>
+
+    <p class="intro">
+        A presente Política de Privacidade descreve como a aplicação <strong>Controlo de Acessos</strong> recolhe, utiliza e protege os seus dados pessoais. 
+        Esta aplicação foi desenvolvida para facilitar a gestão e o controlo de acessos remotos a laboratórios e salas institucionais do <strong>Instituto Politécnico de Tomar (IPT)</strong>.
+    </p>
+
+    <section>
+        <h2>1. Dados que Recolhemos e Processamos</h2>
+        <p>Para o correto funcionamento da Aplicação, recolhemos e processamos apenas as informações estritamente necessárias para a sua autenticação e para a execução dos comandos de controlo de acessos:</p>
+        <ul>
+            <li><strong>Informação de Autenticação:</strong> E-mail institucional e palavra-passe (para login local).</li>
+            <li><strong>Informação de Utilizador:</strong> Nome do utilizador e Identificador Único de Utilizador (<code>userId</code>) fornecidos pela API da instituição após o login.</li>
+            <li><strong>Registos de Acesso (Logs):</strong> Ao solicitar a abertura remota de uma porta, a aplicação envia para a API o seu <code>userId</code> e o identificador do laboratório (<code>labId</code>). Esta associação é guardada nos servidores da instituição por motivos de segurança e auditoria de acessos.</li>
+            <li><strong>Segurança Local:</strong> Se optar por definir um PIN de acesso rápido na aplicação, este será encriptado e guardado de forma segura no seu dispositivo físico utilizando a biblioteca nativa <code>androidx.security:security-crypto</code>. A aplicação não envia o seu PIN para os nossos servidores.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Permissões do Dispositivo</h2>
+        <p>A aplicação solicita apenas as permissões de sistema mínimas necessárias para a sua operação:</p>
+        <ul>
+            <li><strong>Acesso à Internet (<code>INTERNET</code>):</strong> Necessário para comunicar com a API de Controlo de Acessos e realizar o login.</li>
+            <li><strong>Estado da Rede (<code>ACCESS_NETWORK_STATE</code>):</strong> Utilizado para verificar se o dispositivo tem uma ligação ativa à Internet antes de tentar realizar operações.</li>
+        </ul>
+        <p>A Aplicação <strong>não</strong> acede à sua localização por GPS, câmara, galeria de fotos, contactos ou outros dados privados do dispositivo.</p>
+    </section>
+
+    <section>
+        <h2>3. Como Utilizamos os Seus Dados</h2>
+        <p>Utilizamos as informações recolhidas exclusivamente para:</p>
+        <ol style="margin-left: 20px; margin-bottom: 20px;">
+            <li style="margin-bottom: 8px;">Autenticar a sua identidade e garantir que tem permissão para aceder à aplicação.</li>
+            <li style="margin-bottom: 8px;">Apresentar a lista de laboratórios aos quais tem acesso autorizado.</li>
+            <li style="margin-bottom: 8px;">Executar o comando de destrancar portas remotamente a seu pedido.</li>
+            <li style="margin-bottom: 8px;">Manter um registo de segurança no servidor para auditar quem acedeu a que salas e a que horas.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>4. Partilha de Dados com Terceiros</h2>
+        <p>Os seus dados são partilhados apenas com os servidores oficiais da instituição e os serviços estritamente necessários para o funcionamento da App:</p>
+        <ul>
+            <li><strong>Servidores da Instituição:</strong> Todos os dados de login e comandos de abertura de portas são enviados diretamente para a API de controlo de acessos gerida pelo <strong>IPT</strong>.</li>
+        </ul>
+        <p><strong>Não vendemos, partilhamos ou divulgamos os seus dados pessoais a redes de publicidade, parceiros comerciais ou quaisquer terceiros para fins lucrativos.</strong></p>
+    </section>
+
+    <section>
+        <h2>5. Segurança dos Dados</h2>
+        <p>A segurança dos seus dados é prioritária. Empregamos medidas técnicas organizativas e protocolos de comunicação seguros (HTTPS/SSL) para proteger os dados em trânsito. Os dados locais confidenciais (como PINs) são protegidos com chaves criptográficas geridas pelo próprio hardware de segurança do dispositivo Android.</p>
+    </section>
+
+    <section>
+        <h2>6. Alterações a esta Política de Privacidade</h2>
+        <p>Podemos atualizar a nossa Política de Privacidade periodicamente. Recomendamos que reveja esta página regularmente para tomar conhecimento de quaisquer alterações. As modificações entram em vigor imediatamente após a sua publicação.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Instituto Politécnico de Tomar (IPT). Todos os direitos reservados.</p>
+    </footer>
+</div>
+
+</body>
+</html>
